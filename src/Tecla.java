@@ -50,6 +50,10 @@ public abstract class Tecla implements Pulsable{
     public Color getColorPulsado(){
         return this.colorPulsada;
     }
+    @Override
+    public void setGraphics(Graphics g){
+        this.graphics = g;
+    }
     protected abstract int[] getVerticesX();
     protected abstract int[] getVerticesY();
 
