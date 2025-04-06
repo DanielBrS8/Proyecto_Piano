@@ -13,7 +13,7 @@ public abstract class Piano implements ElementoVisual{
         this.posicion=null;
         this.graphics=null;
     }
-    public abstract Tecla getTecla();
+    public abstract Tecla getTecla(int canal, int nota);
 
     public int getTeclaInicial(){
         return this.teclaInicial;
