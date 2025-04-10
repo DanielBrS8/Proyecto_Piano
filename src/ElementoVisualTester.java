@@ -10,6 +10,7 @@ public class ElementoVisualTester {
 
     private Graphics graphics;
     private ElementoVisual elemento;
+    private Consola consola;
 
     public ElementoVisualTester(Graphics g){
 
@@ -19,9 +20,9 @@ public class ElementoVisualTester {
     }
 
     public ElementoVisualTester(){
-        Consola consolaTemp = new Consola();
-        consolaTemp.getCapaFondo().setFondo(new FondoColorSolido(Color.GRAY));
-        this.graphics=consolaTemp.getCapaCanvas().getGraphics();
+        this.consola = new Consola();
+        this.consola.getCapaFondo().setFondo(new FondoColorSolido(Color.GRAY));
+        this.graphics=this.consola.getCapaCanvas().getGraphics();
         this.elemento=null;
 
     }
@@ -62,10 +63,10 @@ public class ElementoVisualTester {
 
         }
 
-        Consola consola = new Consola();
 
-        CapaTexto capaTexto = consola.getCapaTexto();
-        Teclado teclado = consola.getTeclado();
+
+        CapaTexto capaTexto = this.consola.getCapaTexto();
+        Teclado teclado = this.consola.getTeclado();
 
         capaTexto.println("¿Ha salido bien el test? (s/n)");
 
