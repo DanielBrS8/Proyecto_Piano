@@ -11,9 +11,6 @@ public class TeclaBlanca3 extends TeclaBlanca{
         int[] x = {
                 posX
                 ,posX+B-N
-                //posX = 0 B=25 N=15
-                //posX = 0-25+7.5 result
-                //valor esperado aprox =
                 ,posX+B-N
                 ,posX+B
                 ,posX+B
