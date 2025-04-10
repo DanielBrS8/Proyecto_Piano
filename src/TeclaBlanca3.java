@@ -5,11 +5,23 @@ public class TeclaBlanca3 extends TeclaBlanca{
 
     @Override
     protected int[] getVerticesX() {
-        throw new UnsupportedOperationException("Metodo no programad");
+        int posX = this.posicion.x;
+        int N = TeclaNegra.ANCHURA;
+        int B = TeclaBlanca.ANCHURA;
+        int[] x = {
+            posX,posX+B-N/2,posX+B-N/2,posX+B,
+                posX+B,posX
+        };
+        return x;
     }
 
     @Override
     protected int[] getVerticesY() {
-        throw new UnsupportedOperationException("Método no programado");
+        int posY = this.posicion.y;
+        int[] y = {
+                posY+TeclaNegra.ALTURA,posY+TeclaNegra.ALTURA
+                ,posY,posY,posY+TeclaBlanca.ALTURA,posY+TeclaBlanca.ALTURA
+        };
+        return y;
     }
 }
