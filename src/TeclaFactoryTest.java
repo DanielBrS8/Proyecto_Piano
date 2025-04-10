@@ -1,5 +1,3 @@
-package Tests;
-
 import bpc.daw.consola.CapaFondo;
 import bpc.daw.consola.Consola;
 import bpc.daw.consola.FondoColorSolido;

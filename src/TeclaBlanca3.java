@@ -9,18 +9,27 @@ public class TeclaBlanca3 extends TeclaBlanca{
         int N = TeclaNegra.ANCHURA;
         int B = TeclaBlanca.ANCHURA;
         int[] x = {
-            posX,posX+B-N/2,posX+B-N/2,posX+B,
-                posX+B,posX
+                posX
+                ,posX+B-N
+                //posX = 0 B=25 N=15
+                //posX = 0-25+7.5 result
+                //valor esperado aprox =
+                ,posX+B-N
+                ,posX+B
+                ,posX+B
+                ,posX
         };
         return x;
     }
-
     @Override
     protected int[] getVerticesY() {
         int posY = this.posicion.y;
         int[] y = {
-                posY+TeclaNegra.ALTURA,posY+TeclaNegra.ALTURA
-                ,posY,posY,posY+TeclaBlanca.ALTURA,posY+TeclaBlanca.ALTURA
+                posY+TeclaNegra.ALTURA
+                ,posY+TeclaNegra.ALTURA
+                ,posY
+                ,posY,posY+TeclaBlanca.ALTURA
+                ,posY+TeclaBlanca.ALTURA
         };
         return y;
     }

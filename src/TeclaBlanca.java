@@ -3,6 +3,7 @@ import java.awt.*;
 public abstract class TeclaBlanca extends Tecla{
     public static final int ALTURA = 100;
     public static final int ANCHURA = 25;
+
     TeclaBlanca(int numero){
         super(numero);
     }

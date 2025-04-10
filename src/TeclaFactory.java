@@ -1,12 +1,10 @@
-import bpc.daw.consola.Teclado;
-
 public class TeclaFactory {
 
     private TeclaFactory(){}
 
     public static Tecla CrearTecla(int nota){
 
-        int resto = nota/12;
+        int resto = nota%12;
 
 
 

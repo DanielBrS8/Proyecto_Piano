@@ -2,9 +2,9 @@ import javax.swing.text.Position;
 import java.awt.*;
 
 public abstract class Piano implements ElementoVisual{
-    private int teclaInicial;
-    private int teclaFinal;
-    private Position posicion;
+    protected int teclaInicial;
+    protected int teclaFinal;
+    protected Position posicion;
     private Graphics graphics;
 
     public Piano(){

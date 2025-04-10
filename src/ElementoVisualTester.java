@@ -4,7 +4,6 @@ import bpc.daw.consola.FondoColorSolido;
 import bpc.daw.consola.Teclado;
 
 import java.awt.*;
-import java.util.Locale;
 
 public class ElementoVisualTester {
 
@@ -12,10 +11,10 @@ public class ElementoVisualTester {
     private ElementoVisual elemento;
     private Consola consola;
 
-    public ElementoVisualTester(Graphics g){
-
+    public ElementoVisualTester(Graphics g, Consola c){
         this.graphics=g;
         this.elemento=null;
+        this.consola = c;
 
     }
 
@@ -24,7 +23,6 @@ public class ElementoVisualTester {
         this.consola.getCapaFondo().setFondo(new FondoColorSolido(Color.GRAY));
         this.graphics=this.consola.getCapaCanvas().getGraphics();
         this.elemento=null;
-
     }
 
     public void setElementoVisual(ElementoVisual e){
@@ -37,7 +35,7 @@ public class ElementoVisualTester {
 
         this.elemento.setPosicion(120,90);
         this.elemento.setGraphics(this.graphics);
-        this.elemento.dibujar();
+        this.elemento.dibujar() ;
 
         if(this.elemento instanceof Pulsable p){
 
