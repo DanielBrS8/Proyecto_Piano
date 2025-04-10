@@ -31,7 +31,11 @@ public class Programa {
                     PianoPractico = new MultiPiano(24,108);
                 }
             }
-
+            PianoPractico.setPosicion(500,500);
+            PianoPractico.setGraphics(graphics);
+            ReproductorMidi reproMidi = new ReproductorMidi();
+            reproMidi.conectar(PianoPractico);
+            reproMidi.reproducir(direccionArchivo);
 
         }else{
             graphics.drawString("OOps ha ocurrido un error, ese archivo no existe",200,200);
