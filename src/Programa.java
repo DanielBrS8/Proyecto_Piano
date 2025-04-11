@@ -24,7 +24,7 @@ public class Programa {
             Piano PianoPractico = null;
             switch (opcion){
                 case 1 ->{
-                    PianoSencillo pianoS = new PianoSencillo(24,108);
+                    PianoPractico = new PianoSencillo(24,108);
 
                 }
                 case 2 ->{
@@ -36,6 +36,7 @@ public class Programa {
             ReproductorMidi reproMidi = new ReproductorMidi();
             reproMidi.conectar(PianoPractico);
             reproMidi.reproducir(direccionArchivo);
+
 
         }else{
             graphics.drawString("OOps ha ocurrido un error, ese archivo no existe",200,200);
