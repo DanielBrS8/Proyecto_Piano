@@ -20,18 +20,19 @@ public class ReproductorMidi implements Receiver {
     }
     public void conectar(Piano p){
         this.pianoMidi=p;
+
     }
     public void reproducir(String ruta) {
 
         try{
+            Sequence Secuencia = MidiSystem.getSequence(new File(ruta));
             Sequencer S1 = MidiSystem.getSequencer();
-            S1.getSequence();
             S1.open();
             Transmitter T1 = S1.getTransmitter();
             T1.setReceiver(this);
-            S1.setSequence(MidiSystem.getSequence(new File(ruta)));
+            S1.setSequence(Secuencia);
             S1.start();
-            Thread.sleep(MidiSystem.getSequence(new File(ruta)).getMicrosecondLength()/10);
+            Thread.sleep(Secuencia.getMicrosecondLength()/10);
             T1.close();
             S1.close();
 
@@ -51,7 +52,7 @@ public class ReproductorMidi implements Receiver {
     public void send(MidiMessage message, long timeStamp) {
         if(message instanceof ShortMessage ){
             ShortMessage sM = (ShortMessage)message;
-            if(sM.getChannel()==9){
+            if(sM.getChannel() ==9){
                 int numeroNota = sM.getData1();
                 Tecla t = this.pianoMidi.getTecla(sM.getChannel(),numeroNota);
                 if(t.posicion!=null){
@@ -59,17 +60,19 @@ public class ReproductorMidi implements Receiver {
                     if(nComando==ShortMessage.NOTE_ON){
                         int volumen = sM.getData2();
                         if(volumen>0){
-                            t.setColorPulsado(this.COLORES[sM.getChannel()]);
+                            t.setColorPulsado(ReproductorMidi.COLORES[sM.getChannel()]);
                             t.pulsar();
-                            t.dibujar();
+
                         } else if (volumen==0) {
+
                             t.soltar();
-                            t.dibujar();
+
                         }
                     } else if (nComando==ShortMessage.NOTE_OFF) {
                         t.soltar();
-                        t.dibujar();
+
                     }
+                    t.dibujar();
 
                 }
             }

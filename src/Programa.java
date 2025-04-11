@@ -34,6 +34,7 @@ public class Programa {
             PianoPractico.setGraphics(graphics);
             PianoPractico.setPosicion(500,500);
 
+
             ReproductorMidi reproMidi = new ReproductorMidi();
             reproMidi.conectar(PianoPractico);
             reproMidi.reproducir(direccionArchivo);
