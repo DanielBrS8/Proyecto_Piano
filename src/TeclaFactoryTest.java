@@ -17,7 +17,7 @@ public class TeclaFactoryTest {
 
         capaFondo.setFondo(fondoColorSolido);
 
-        ElementoVisualTester elementoVisualTester = new ElementoVisualTester();
+        ElementoVisualTester elementoVisualTester = new ElementoVisualTester(consola);
 
     }
 

@@ -18,8 +18,8 @@ public class ElementoVisualTester {
 
     }
 
-    public ElementoVisualTester(){
-        this.consola = new Consola();
+    public ElementoVisualTester(Consola c){
+        this.consola = c;
         this.consola.getCapaFondo().setFondo(new FondoColorSolido(Color.GRAY));
         this.graphics=this.consola.getCapaCanvas().getGraphics();
         this.elemento=null;
@@ -60,26 +60,27 @@ public class ElementoVisualTester {
             p.dibujar();
 
         }
-
-
-
-        CapaTexto capaTexto = this.consola.getCapaTexto();
-        Teclado teclado = this.consola.getTeclado();
-
-        capaTexto.println("¿Ha salido bien el test? (s/n)");
-
-        String respuestUsuario = teclado.leerCadenaCaracteres();
-
         boolean devolver = false;
+        if(this.consola!=null){
+            CapaTexto capaTexto = this.consola.getCapaTexto();
+            Teclado teclado = this.consola.getTeclado();
 
-        if(respuestUsuario.equalsIgnoreCase("s")){
+            capaTexto.println("¿Ha salido bien el test? (s/n)");
 
-            devolver=true;
+            String respuestUsuario = teclado.leerCadenaCaracteres();
+
+
+            if(respuestUsuario.equalsIgnoreCase("s")){
+
+                devolver=true;
+
+            }
+
+
 
         }
 
         return devolver;
-
     }
 
 }
