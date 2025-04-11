@@ -51,8 +51,9 @@ public class ReproductorMidi implements Receiver {
     public void send(MidiMessage message, long timeStamp) {
         if(message instanceof ShortMessage ){
             ShortMessage sM = (ShortMessage)message;
-            if(sM.getChannel()!=9){
-                Tecla t = this.pianoMidi.getTecla(sM.getChannel(),sM.getData1());
+            if(sM.getChannel()==9){
+                int numeroNota = sM.getData1();
+                Tecla t = this.pianoMidi.getTecla(sM.getChannel(),numeroNota);
                 if(t.posicion!=null){
                     int nComando = sM.getCommand();
                     if(nComando==ShortMessage.NOTE_ON){
